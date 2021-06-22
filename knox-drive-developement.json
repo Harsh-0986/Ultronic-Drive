@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "knox-drive-developement",
+  "private_key_id": "0dedaf7354e2a5a6f39c919fd3deec89f2d97f73",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQD2OQ6k99kz0emU\nLsqWfwfw8cEI36sZvrxvzoowKPerSyX5zCLJcqsHU3Uqo6NpYk7/5+WaenPn834W\njsYSBZnGfrNN80yZc+zGHS29HhI6n+z4nCiMCxk0uBVkovpsL+i8bO1pchMXXHUM\n0gKmw9D8PbcaPOdvQfKwCiVi69eEG5RPJs6B0L8Qblg6U8eqQe5kCOG/TAQkcz0L\n+CHfuOocnWOY+yxNRxsAtP+XL3aD3MTYbOaf8hTytpxph06Hk+1ODbXNCOB+pA/k\nIniFU7S92QuR8TnKQZvMhE1YIc+YeuCLAzlCa/SufT5jBCt7mxC6DETjUbQeVjo0\nOlQm9SYHAgMBAAECggEAIPPj7Noq3I+UZjuY62lW471HK2vb11c6mvAWeHmTI/6r\nt3HFmhZZo2JdBPbfkOQSVJdxmCoZRwrEbjpvccwEF5evYZhVQRhNsPoIvA3BPM1Y\nhrFHj+6QUgjs/An/3+jNiiI95+XXfkHmfG/C4RTF7GxKDB3oj3BRDZReCo4ryscu\n7hUN2UsC1PU45tdd/mmKPslbCJ1Oo9KGfuPcRyUe6WqtEOZ605wYW7Whkusip/2V\npFsqbSOxXqzzIVkvsPPX2SmgoXlvFzJAWOaL1McDwTECNDZJ08bEORkFFD6wer0o\naNtnuBbK5T50PG9DqDNbXNLRwou/dIgk8YFiWusj6QKBgQD+LJDfOfkUb6XM7Uan\n8rAeeK206SahogUTpwbkrGSZJMT5At5RzmZ8XUZTyxo05n69AE8fRtUjCxun1Q9N\nSOs1UH/+qrntq3WkwCWbtUNGQNo5bzJ5zPMNYJW1uH6rViacEFmsa9Xj8WeUBNJk\nvPX7db41FALkZJcjfgbDNk5WswKBgQD3/d5og4FE4fxa9x3aWIVUgb1do2E1/tIl\nu9nibbEhLFX3E4ODMcR0f3lf3ZMYItyvJXe9W3HOX44Pc9uIHUDgeQfArNuOMti9\nEHb1wh4EapXSxXpdCxhTpIxBfBgaNMwEjxlC84Zc+Wd2gXePXPwD1jwupl9rOest\nMi27mk09XQKBgQD1HEUY/+8Tphdd5/ObQo5U1EuviqeWd4gty4T6QMVCahMJj5qV\niVWL2OdZJyO+oAjYetPSdZxUjwG8d9qpzQgGAftsu3dRm2d32VRrNAIMXb4UZQdo\nLhy1ac71z1VYJVxWY+4WOGerycD5HS1HuHH+bS1gQkwHtHmL4Jzk5BnnwQKBgQCl\nITeSklZmfrAiBkCrnpwRfF6S1nKpmKdoFuDrxCzZMQOBBU5h8qalCCjS6+DBhp06\nRxGnVhe+2qPmqDf7N7d2gUDnTHLaCgOGSUtdM8f3Gt3uvi5PfE7Ti1MVW8NU1+kt\n8/dXPH8ws6XwJB9vp/PrviDO01vgM23k52/KZuGdxQKBgQCj5xhTqRTIMuH8F27G\n/fDeSFQFpjGNZSbdDunKmWuWu+5wDDtshePsLzhtz2pupef0LBiHC5fSObmgR0Dh\nlGTjN234q1t0WrJpYGk96ngxV6Svu/cuj59sc83J13KBjOht4UQ7VRo4Mi/he8RC\npPsZ/qSww7dGzL5oGYbj3hloPw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-n53dv@knox-drive-developement.iam.gserviceaccount.com",
+  "client_id": "101175751517989481991",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-n53dv%40knox-drive-developement.iam.gserviceaccount.com"
+}
