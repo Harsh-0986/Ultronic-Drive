@@ -22,42 +22,53 @@ export default function Dashboard() {
     <>
       <NavBar></NavBar>
 
-      <Container fluid>
-        <div className="d-flex align-items-center">
-          <FolderBreadcrumbs currentFolder={folder}></FolderBreadcrumbs>
-          <AddFileButton currentFolder={folder}></AddFileButton>
-          <AddFolderButton currentFolder={folder}></AddFolderButton>
+      <div className="d-flex flex-column " style={{ height: "89vh" }}>
+        <Container fluid>
+          <div className="d-flex align-items-center ">
+            <FolderBreadcrumbs currentFolder={folder}></FolderBreadcrumbs>
+            <AddFileButton currentFolder={folder}></AddFileButton>
+            <AddFolderButton currentFolder={folder}></AddFolderButton>
+          </div>
+
+          {childFolders.length > 0 && (
+            <div className="d-flex flex-wrap">
+              {childFolders.map((childFolder) => (
+                <div
+                  key={childFolder.id}
+                  style={{ maxWidth: "40vw" }}
+                  className="p-2"
+                >
+                  <Folder folder={childFolder}></Folder>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {childFolders.length > 0 && childFiles.length > 0 && <hr />}
+
+          {childFiles.length > 0 && (
+            <div className="d-flex flex-wrap">
+              {childFiles.map((childFile) => (
+                <div
+                  key={childFile.id}
+                  style={{ maxWidth: "40vw" }}
+                  className="p-2"
+                >
+                  <File file={childFile}></File>
+                </div>
+              ))}
+            </div>
+          )}
+        </Container>
+      </div>
+      <footer className="bg-dark  text-center text-white">
+        <div className="text-center p-1">
+          © 2021 &nbsp;
+          <a className="text-white" href="https://github.com/Harsh-0986">
+            Harsh Shah
+          </a>
         </div>
-        {childFolders.length > 0 && (
-          <div className="d-flex flex-wrap">
-            {childFolders.map((childFolder) => (
-              <div
-                key={childFolder.id}
-                style={{ maxWidth: "40vw" }}
-                className="p-2"
-              >
-                <Folder folder={childFolder}></Folder>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {childFolders.length > 0 && childFiles.length > 0 && <hr />}
-
-        {childFiles.length > 0 && (
-          <div className="d-flex flex-wrap">
-            {childFiles.map((childFile) => (
-              <div
-                key={childFile.id}
-                style={{ maxWidth: "40vw" }}
-                className="p-2"
-              >
-                <File file={childFile}></File>
-              </div>
-            ))}
-          </div>
-        )}
-      </Container>
+      </footer>
     </>
   );
 }
