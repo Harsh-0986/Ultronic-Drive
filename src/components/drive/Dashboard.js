@@ -19,10 +19,10 @@ export default function Dashboard() {
   console.log(childFiles);
 
   return (
-    <>
+    <div style={{ overflow: "hidden", height: "100vh" }}>
       <NavBar></NavBar>
 
-      <div className="d-flex flex-column " style={{ height: "89vh" }}>
+      <div className="d-flex flex-column ">
         <Container fluid>
           <div className="d-flex align-items-center ">
             <FolderBreadcrumbs currentFolder={folder}></FolderBreadcrumbs>
@@ -61,14 +61,17 @@ export default function Dashboard() {
           )}
         </Container>
       </div>
-      <footer className="bg-dark  text-center text-white">
+      <footer style={{ position: "fixed", bottom: 0, width: "100vw" }}>
         <div className="text-center p-1">
-          © 2021 &nbsp;
-          <a className="text-white" href="https://github.com/Harsh-0986">
-            Harsh Shah
+          Copyright © 2021
+          <a
+            href="https://github.com/Harsh-0986"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            &nbsp;Harsh Shah
           </a>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
