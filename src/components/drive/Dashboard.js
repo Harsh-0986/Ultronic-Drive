@@ -19,7 +19,9 @@ export default function Dashboard() {
     folderId,
     state.folder
   );
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode"));
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("darkMode"))
+  );
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
@@ -39,9 +41,19 @@ export default function Dashboard() {
               currentFolder={folder}
               className={darkMode ? "bg-dark" : "bg-light"}
             ></FolderBreadcrumbs>
-            <AddFileButton currentFolder={folder}></AddFileButton>
-            <AddFolderButton currentFolder={folder}></AddFolderButton>
-            <label className="btn btn-outline-success btn-sm m-2 mt-0 mb-0">
+            <AddFileButton
+              className={darkMode ? "bg-dark" : "bg-light"}
+              currentFolder={folder}
+            ></AddFileButton>
+            <AddFolderButton
+              className={darkMode ? "bg-dark" : "bg-light"}
+              currentFolder={folder}
+            ></AddFolderButton>
+            <label
+              className={`btn ${
+                darkMode ? "btn-outline-light" : "btn-outline-success"
+              } btn-sm m-2 mt-0 mb-0`}
+            >
               {darkMode ? (
                 <FontAwesomeIcon
                   icon={faSun}

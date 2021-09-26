@@ -5,8 +5,9 @@ import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 import { database } from "../../firebase";
 import { useAuth } from "../../context/AuthContext";
 import { ROOT_FOLDER } from "../../hooks/useFolder";
+import "./style.css";
 
-export default function AddFolderButton({ currentFolder }) {
+export default function AddFolderButton({ currentFolder, className }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const { currentUser } = useAuth();
@@ -43,7 +44,11 @@ export default function AddFolderButton({ currentFolder }) {
 
   return (
     <>
-      <Button onClick={openModal} variant="outline-success" size="sm">
+      <Button
+        onClick={openModal}
+        variant={className === "bg-light" ? "outline-success" : "outline-light"}
+        size="sm"
+      >
         <FontAwesomeIcon icon={faFolderPlus} />
       </Button>
       <Modal show={open} onHide={closeModal}>

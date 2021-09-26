@@ -8,7 +8,7 @@ import { v4 as uuidV4 } from "uuid";
 import ReactDom from "react-dom";
 import { Toast, ProgressBar } from "react-bootstrap";
 
-export default function AddFileButton({ currentFolder }) {
+export default function AddFileButton({ className, currentFolder }) {
   const [uploadingFiles, setUploadingFiles] = useState([]);
   const { currentUser } = useAuth();
 
@@ -90,7 +90,11 @@ export default function AddFileButton({ currentFolder }) {
 
   return (
     <>
-      <label className="btn btn-outline-success btn-sm m-2 mt-0 mb-0">
+      <label
+        className={`btn ${
+          className === "bg-light" ? "btn-outline-success" : "btn-outline-light"
+        } btn-sm m-2 mt-0 mb-0`}
+      >
         <FontAwesomeIcon icon={faFileUpload} />
         <input
           type="file"
@@ -112,8 +116,8 @@ export default function AddFileButton({ currentFolder }) {
               <Toast
                 key={file.id}
                 onClose={() => {
-                  setUploadingFiles((prevUploadindFiles) => {
-                    return prevUploadindFiles.filter((uploadFile) => {
+                  setUploadingFiles((prevUploadingFiles) => {
+                    return prevUploadingFiles.filter((uploadFile) => {
                       return uploadFile.id !== file.id;
                     });
                   });

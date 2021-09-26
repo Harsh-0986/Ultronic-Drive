@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function NavbarComponent({ className }) {
-  console.log(className);
   return (
     <Navbar
       style={{ justifyContent: "space-between" }}

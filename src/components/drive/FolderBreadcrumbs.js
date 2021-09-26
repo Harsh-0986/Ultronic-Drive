@@ -12,7 +12,7 @@ export default function FolderBreadcrumbs({ className, currentFolder }) {
       className="flex-grow-1"
       listProps={{
         className: `${
-          className === "bg-white" ? "bg-white" : "bg-black"
+          className === "bg-light" ? "bg-white" : "bg-black"
         } p-2 m-0`,
       }}
     >
