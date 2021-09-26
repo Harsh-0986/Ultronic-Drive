@@ -4,11 +4,11 @@ import { faFolder } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-export default function Folder({ folder }) {
+export default function Folder({ folder, darkMode }) {
   return (
     <Button
       to={{ pathname: `/folder/${folder.id}`, state: { folder: folder } }}
-      variant="outline-dark"
+      variant={`${darkMode ? "outline-light" : "outline-dark"}`}
       className="text-truncate w-100"
       as={Link}
     >

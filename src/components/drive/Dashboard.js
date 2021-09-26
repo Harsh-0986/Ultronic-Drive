@@ -76,7 +76,7 @@ export default function Dashboard() {
                   style={{ maxWidth: "40vw" }}
                   className="p-2"
                 >
-                  <Folder folder={childFolder}></Folder>
+                  <Folder darkMode={darkMode} folder={childFolder}></Folder>
                 </div>
               ))}
             </div>
@@ -92,19 +92,23 @@ export default function Dashboard() {
                   style={{ maxWidth: "40vw" }}
                   className="p-2"
                 >
-                  <File file={childFile}></File>
+                  <File darkMode={darkMode} file={childFile}></File>
                 </div>
               ))}
             </div>
           )}
         </Container>
       </div>
-      <footer style={{ position: "fixed", bottom: 0, width: "100vw" }}>
+      <footer
+        className={darkMode ? "bg-dark text-white" : "bg-light text-black"}
+        style={{ position: "fixed", bottom: 0, width: "100vw" }}
+      >
         <div className="text-center p-1">
           Copyright © 2021
           <a
             href="https://github.com/Harsh-0986"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{ textDecoration: "none" }}
+            className={darkMode ? "text-white" : "text-black"}
           >
             &nbsp;Harsh Shah
           </a>
