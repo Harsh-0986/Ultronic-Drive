@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFolder } from "../../hooks/useFolder";
 import NavBar from "./Navbar";
 import { Container } from "react-bootstrap";
@@ -8,6 +8,9 @@ import Folder from "./Folder";
 import { useParams, useLocation } from "react-router-dom";
 import FolderBreadcrumbs from "./FolderBreadcrumbs";
 import File from "./File";
+import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function Dashboard() {
   const { folderId } = useParams();
@@ -16,11 +19,18 @@ export default function Dashboard() {
     folderId,
     state.folder
   );
-  console.log(childFiles);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode"));
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   return (
-    <div style={{ overflow: "hidden", height: "100vh" }}>
-      <NavBar></NavBar>
+    <div
+      style={{ overflow: "hidden", height: "100vh" }}
+      className={darkMode ? "bg-dark" : "bg-light"}
+    >
+      <NavBar className={darkMode ? "bg-dark" : "bg-light"}></NavBar>
 
       <div className="d-flex flex-column ">
         <Container fluid>
@@ -28,6 +38,19 @@ export default function Dashboard() {
             <FolderBreadcrumbs currentFolder={folder}></FolderBreadcrumbs>
             <AddFileButton currentFolder={folder}></AddFileButton>
             <AddFolderButton currentFolder={folder}></AddFolderButton>
+            <label className="btn btn-outline-success btn-sm m-2 mt-0 mb-0">
+              {darkMode ? (
+                <FontAwesomeIcon
+                  icon={faSun}
+                  onClick={() => setDarkMode(false)}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faMoon}
+                  onClick={() => setDarkMode(true)}
+                />
+              )}
+            </label>
           </div>
 
           {childFolders.length > 0 && (

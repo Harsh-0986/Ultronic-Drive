@@ -17,9 +17,9 @@ export default function AddFileButton({ currentFolder }) {
     if (currentFolder == null || file == null) return;
 
     const id = uuidV4();
-    setUploadingFiles((prevUploadindFiles) => [
-      ...prevUploadindFiles,
-      { id: id, name: file.name, progree: 0, error: false },
+    setUploadingFiles((prevUploadingFiles) => [
+      ...prevUploadingFiles,
+      { id: id, name: file.name, progress: 0, error: false },
     ]);
 
     // console.log(currentFolder.path.map((p) => console.log(p.name)));
@@ -37,8 +37,8 @@ export default function AddFileButton({ currentFolder }) {
       "state_changed",
       (snapshot) => {
         const progress = snapshot.bytesTransferred / snapshot.totalBytes;
-        setUploadingFiles((prevUploadindFiles) => {
-          return prevUploadindFiles.map((uploadFile) => {
+        setUploadingFiles((prevUploadingFiles) => {
+          return prevUploadingFiles.map((uploadFile) => {
             if (uploadFile.id === id) {
               return { ...uploadFile, progress: progress };
             }
@@ -48,8 +48,8 @@ export default function AddFileButton({ currentFolder }) {
         });
       },
       () => {
-        setUploadingFiles((prevUploadindFiles) => {
-          return prevUploadindFiles.map((uploadFile) => {
+        setUploadingFiles((prevUploadingFiles) => {
+          return prevUploadingFiles.map((uploadFile) => {
             if (uploadFile.id === id) {
               return { ...uploadFile, error: true };
             }
@@ -58,8 +58,8 @@ export default function AddFileButton({ currentFolder }) {
         });
       },
       () => {
-        setUploadingFiles((prevUploadindFiles) => {
-          return prevUploadindFiles.filter((uploadFile) => {
+        setUploadingFiles((prevUploadingFiles) => {
+          return prevUploadingFiles.filter((uploadFile) => {
             return uploadFile.id !== id;
           });
         });
