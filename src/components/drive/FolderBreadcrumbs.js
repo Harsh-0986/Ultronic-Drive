@@ -2,14 +2,19 @@ import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { ROOT_FOLDER } from "../../hooks/useFolder";
 import { Link } from "react-router-dom";
+import "./style.css";
 
-export default function FolderBreadcrumbs({ currentFolder }) {
+export default function FolderBreadcrumbs({ className, currentFolder }) {
   let path = currentFolder === ROOT_FOLDER ? [] : [ROOT_FOLDER];
   if (currentFolder) path = [...path, ...currentFolder.path];
   return (
     <Breadcrumb
       className="flex-grow-1"
-      listProps={{ className: "bg-white p-2 m-0" }}
+      listProps={{
+        className: `${
+          className === "bg-white" ? "bg-white" : "bg-black"
+        } p-2 m-0`,
+      }}
     >
       {path.map((folder, index) => (
         <Breadcrumb.Item
@@ -21,7 +26,9 @@ export default function FolderBreadcrumbs({ currentFolder }) {
               state: { folder: { ...folder, path: path.slice(1, index) } },
             },
           }}
-          className="text-truncate d-inline-block"
+          className={`${
+            className === "bg-dark" ? "text-white" : "text-black"
+          } text-truncate d-inline-block`}
           style={{
             maxWidth: "30vw",
             color: "black",
@@ -32,7 +39,9 @@ export default function FolderBreadcrumbs({ currentFolder }) {
       ))}
       {currentFolder && (
         <Breadcrumb.Item
-          className="text-truncate d-inline-block"
+          className={`${
+            className === "bg-dark" ? "text-white" : "text-black"
+          } text-truncate d-inline-block`}
           style={{
             maxWidth: "50vw",
             color: "black",

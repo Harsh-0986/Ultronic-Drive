@@ -35,7 +35,10 @@ export default function Dashboard() {
       <div className="d-flex flex-column ">
         <Container fluid>
           <div className="d-flex align-items-center ">
-            <FolderBreadcrumbs currentFolder={folder}></FolderBreadcrumbs>
+            <FolderBreadcrumbs
+              currentFolder={folder}
+              className={darkMode ? "bg-dark" : "bg-light"}
+            ></FolderBreadcrumbs>
             <AddFileButton currentFolder={folder}></AddFileButton>
             <AddFolderButton currentFolder={folder}></AddFolderButton>
             <label className="btn btn-outline-success btn-sm m-2 mt-0 mb-0">
