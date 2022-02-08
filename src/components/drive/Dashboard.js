@@ -104,7 +104,7 @@ export default function Dashboard() {
         style={{ position: "fixed", bottom: 0, width: "100vw" }}
       >
         <div className="text-center p-1">
-          Copyright © 2021
+          Copyright © 2022
           <a
             href="https://github.com/Harsh-0986"
             style={{ textDecoration: "none" }}
